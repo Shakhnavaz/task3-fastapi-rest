@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Glossary - Глоссарий терминов</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Web3 Glossary</h1>
+            <nav>
+                <button class="nav-btn active" data-view="glossary">Глоссарий</button>
+                <button class="nav-btn" data-view="graph">Семантический граф</button>
+            </nav>
+        </header>
+
+        <!-- Глоссарий -->
+        <div id="glossary-view" class="view active">
+            <div class="controls">
+                <input type="text" id="search-input" placeholder="Поиск терминов..." />
+                <select id="category-filter">
+                    <option value="">Все категории</option>
+                </select>
+                <button id="add-term-btn" class="btn-primary">+ Добавить термин</button>
+            </div>
+            
+            <div id="terms-list" class="terms-list"></div>
+        </div>
+
+        <!-- Семантический граф -->
+        <div id="graph-view" class="view">
+            <div class="graph-controls">
+                <button id="refresh-graph-btn" class="btn-secondary">Обновить граф</button>
+                <div class="graph-info">
+                    <span id="graph-stats"></span>
+                </div>
+            </div>
+            <div id="graph-container"></div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для добавления/редактирования термина -->
+    <div id="term-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Добавить термин</h2>
+            <form id="term-form">
+                <input type="hidden" id="term-keyword-edit" />
+                
+                <div class="form-group">
+                    <label for="term-keyword">Ключевое слово *</label>
+                    <input type="text" id="term-keyword" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="term-title">Название *</label>
+                    <input type="text" id="term-title" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="term-definition">Определение *</label>
+                    <textarea id="term-definition" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="term-source">Источник</label>
+                    <input type="url" id="term-source" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="term-category">Категория</label>
+                    <input type="text" id="term-category" list="categories-list" />
+                    <datalist id="categories-list"></datalist>
+                </div>
+                
+                <div class="form-group">
+                    <label for="term-related">Связанные термины (через запятую)</label>
+                    <input type="text" id="term-related" placeholder="blockchain, ethereum" />
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-btn">Отмена</button>
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра термина -->
+    <div id="view-term-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-view">&times;</span>
+            <div id="term-details"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
