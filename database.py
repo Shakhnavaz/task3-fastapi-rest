@@ -15,170 +15,130 @@ class Database:
         self._initialize_default_terms()
     
     def _initialize_default_terms(self):
-        """Инициализация с базовыми Web3 терминами"""
+        """Инициализация с базовыми PWA терминами"""
         default_terms = [
             {
-                "keyword": "blockchain",
-                "title": "Блокчейн",
-                "definition": "Распределенная база данных, которая хранит информацию в блоках, связанных между собой криптографическими хешами. Каждый блок содержит хеш предыдущего блока, что обеспечивает целостность данных.",
-                "source": "https://en.wikipedia.org/wiki/Blockchain",
-                "category": "Технология",
-                "related_terms": ["cryptocurrency", "distributed-ledger", "consensus"]
-            },
-            {
-                "keyword": "cryptocurrency",
-                "title": "Криптовалюта",
-                "definition": "Цифровая или виртуальная валюта, защищенная криптографией, что делает практически невозможной подделку или двойное расходование. Большинство криптовалют основаны на технологии блокчейн.",
-                "source": "https://en.wikipedia.org/wiki/Cryptocurrency",
-                "category": "Финансы",
-                "related_terms": ["blockchain", "bitcoin", "token"]
-            },
-            {
-                "keyword": "bitcoin",
-                "title": "Биткоин",
-                "definition": "Первая и самая известная криптовалюта, созданная в 2009 году. Использует децентрализованную сеть и технологию блокчейн для осуществления транзакций без посредников.",
-                "source": "https://bitcoin.org/",
-                "category": "Криптовалюта",
-                "related_terms": ["cryptocurrency", "blockchain", "mining"]
-            },
-            {
-                "keyword": "ethereum",
-                "title": "Эфириум",
-                "definition": "Децентрализованная платформа с открытым исходным кодом, которая использует технологию блокчейн для создания смарт-контрактов и децентрализованных приложений (DApps).",
-                "source": "https://ethereum.org/",
-                "category": "Платформа",
-                "related_terms": ["blockchain", "smart-contract", "dapp"]
-            },
-            {
-                "keyword": "smart-contract",
-                "title": "Смарт-контракт",
-                "definition": "Самоисполняющийся контракт, условия которого записаны в виде кода на блокчейне. Автоматически выполняет условия соглашения при выполнении определенных условий.",
-                "source": "https://ethereum.org/en/developers/docs/smart-contracts/",
-                "category": "Технология",
-                "related_terms": ["ethereum", "blockchain", "dapp"]
-            },
-            {
-                "keyword": "dapp",
-                "title": "Децентрализованное приложение",
-                "definition": "Приложение, которое работает на децентрализованной сети, такой как блокчейн, и не контролируется единым органом. Использует смарт-контракты для выполнения логики.",
-                "source": "https://ethereum.org/en/developers/docs/dapps/",
-                "category": "Приложение",
-                "related_terms": ["ethereum", "smart-contract", "web3"]
-            },
-            {
-                "keyword": "web3",
-                "title": "Web3",
-                "definition": "Концепция следующего поколения интернета, основанная на децентрализации, блокчейне и токенах. Предполагает возврат контроля над данными пользователям.",
-                "source": "https://web3.foundation/",
+                "keyword": "pwa",
+                "title": "Progressive Web Application (PWA)",
+                "definition": "Прогрессивное веб-приложение — это веб-приложение, использующее современные веб-технологии для обеспечения опыта, сопоставимого с нативными мобильными приложениями: офлайн-работа, установка на устройство, push-уведомления.",
+                "source": "https://web.dev/progressive-web-apps/",
                 "category": "Концепция",
-                "related_terms": ["blockchain", "dapp", "decentralization"]
+                "related_terms": ["service-worker", "web-app-manifest", "offline-first"]
             },
             {
-                "keyword": "nft",
-                "title": "NFT (Non-Fungible Token)",
-                "definition": "Уникальный токен, который представляет право собственности на цифровой или физический актив. Каждый NFT уникален и не может быть заменен другим токеном.",
-                "source": "https://ethereum.org/en/nft/",
-                "category": "Токен",
-                "related_terms": ["token", "blockchain", "ethereum"]
+                "keyword": "service-worker",
+                "title": "Service Worker",
+                "definition": "Фоновый скрипт, работающий отдельно от веб-страницы, который перехватывает сетевые запросы, управляет кэшированием и обеспечивает офлайн-режим и push-уведомления.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+                "category": "Технология",
+                "related_terms": ["pwa", "cache-api", "push-notifications"]
             },
             {
-                "keyword": "token",
-                "title": "Токен",
-                "definition": "Цифровой актив, выпущенный на блокчейне. Может представлять различные активы: криптовалюту, право собственности, голосование и т.д.",
-                "source": "https://ethereum.org/en/developers/docs/standards/tokens/",
-                "category": "Токен",
-                "related_terms": ["cryptocurrency", "nft", "blockchain"]
+                "keyword": "web-app-manifest",
+                "title": "Web App Manifest",
+                "definition": "JSON-файл, содержащий метаданные о веб-приложении (иконки, имя, цвет темы, режим отображения), позволяющий устанавливать PWA на устройство пользователя.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/Manifest",
+                "category": "Технология",
+                "related_terms": ["pwa", "installable", "display-mode"]
             },
             {
-                "keyword": "defi",
-                "title": "DeFi (Decentralized Finance)",
-                "definition": "Финансовая система, построенная на блокчейне, которая устраняет посредников и позволяет пользователям напрямую взаимодействовать с финансовыми услугами через смарт-контракты.",
-                "source": "https://ethereum.org/en/defi/",
-                "category": "Финансы",
-                "related_terms": ["smart-contract", "blockchain", "dapp"]
+                "keyword": "offline-first",
+                "title": "Offline First",
+                "definition": "Подход к разработке, при котором приложение изначально проектируется для работы без подключения к интернету с последующей синхронизацией данных при восстановлении сети.",
+                "source": "https://web.dev/offline-cookbook/",
+                "category": "Архитектура",
+                "related_terms": ["pwa", "service-worker", "background-sync"]
             },
             {
-                "keyword": "mining",
-                "title": "Майнинг",
-                "definition": "Процесс добавления новых транзакций в блокчейн путем решения сложных математических задач. Майнеры получают вознаграждение за свою работу.",
-                "source": "https://en.wikipedia.org/wiki/Cryptocurrency",
-                "category": "Процесс",
-                "related_terms": ["bitcoin", "blockchain", "consensus"]
+                "keyword": "cache-api",
+                "title": "Cache API",
+                "definition": "Интерфейс браузера, позволяющий хранить и извлекать HTTP-запросы и ответы, обеспечивая гибкое кэширование ресурсов в PWA.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/API/Cache",
+                "category": "API",
+                "related_terms": ["service-worker", "offline-first"]
             },
             {
-                "keyword": "consensus",
-                "title": "Консенсус",
-                "definition": "Механизм достижения согласия в децентрализованной сети о состоянии блокчейна. Популярные алгоритмы: Proof of Work (PoW) и Proof of Stake (PoS).",
-                "source": "https://ethereum.org/en/developers/docs/consensus-mechanisms/",
-                "category": "Механизм",
-                "related_terms": ["blockchain", "mining", "proof-of-stake"]
+                "keyword": "background-sync",
+                "title": "Background Sync",
+                "definition": "Механизм, позволяющий откладывать выполнение задач (например, отправку данных на сервер) до момента восстановления интернет-соединения.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API",
+                "category": "API",
+                "related_terms": ["service-worker", "offline-first"]
             },
             {
-                "keyword": "proof-of-stake",
-                "title": "Proof of Stake (PoS)",
-                "definition": "Алгоритм консенсуса, при котором валидаторы блоков выбираются на основе количества токенов, которые они держат и готовы 'заблокировать' (стейкать).",
-                "source": "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
-                "category": "Механизм",
-                "related_terms": ["consensus", "ethereum", "staking"]
+                "keyword": "push-notifications",
+                "title": "Push-уведомления",
+                "definition": "Сообщения, отправляемые сервером и отображаемые пользователю даже при закрытом приложении, реализуемые в PWA через Service Worker.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/API/Push_API",
+                "category": "Функциональность",
+                "related_terms": ["service-worker", "notifications-api"]
             },
             {
-                "keyword": "staking",
-                "title": "Стейкинг",
-                "definition": "Процесс блокировки криптовалюты для участия в валидации транзакций в сети Proof of Stake и получения вознаграждений.",
-                "source": "https://ethereum.org/en/staking/",
-                "category": "Процесс",
-                "related_terms": ["proof-of-stake", "consensus", "ethereum"]
+                "keyword": "notifications-api",
+                "title": "Notifications API",
+                "definition": "Web API для отображения системных уведомлений пользователю с его разрешения.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API",
+                "category": "API",
+                "related_terms": ["push-notifications", "service-worker"]
             },
             {
-                "keyword": "wallet",
-                "title": "Криптокошелек",
-                "definition": "Цифровой инструмент для хранения, отправки и получения криптовалют. Содержит приватные ключи, необходимые для доступа к средствам на блокчейне.",
-                "source": "https://ethereum.org/en/wallets/",
+                "keyword": "installable",
+                "title": "Устанавливаемость (Installable)",
+                "definition": "Характеристика PWA, позволяющая пользователю установить приложение на домашний экран устройства без использования App Store или Google Play.",
+                "source": "https://web.dev/install-criteria/",
+                "category": "Характеристика",
+                "related_terms": ["pwa", "web-app-manifest"]
+            },
+            {
+                "keyword": "display-mode",
+                "title": "Display Mode",
+                "definition": "Параметр Web App Manifest, определяющий способ отображения приложения (fullscreen, standalone, minimal-ui, browser).",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/Manifest/display",
+                "category": "Конфигурация",
+                "related_terms": ["web-app-manifest", "installable"]
+            },
+            {
+                "keyword": "lighthouse",
+                "title": "Lighthouse",
+                "definition": "Инструмент аудита от Google для анализа производительности, доступности и соответствия PWA-стандартам.",
+                "source": "https://developer.chrome.com/docs/lighthouse/",
                 "category": "Инструмент",
-                "related_terms": ["cryptocurrency", "private-key", "blockchain"]
+                "related_terms": ["pwa", "performance"]
             },
             {
-                "keyword": "private-key",
-                "title": "Приватный ключ",
-                "definition": "Секретный ключ, который используется для подписи транзакций и доступа к криптовалюте. Должен храниться в секрете, так как его потеря означает потерю доступа к средствам.",
-                "source": "https://ethereum.org/en/developers/docs/accounts/",
+                "keyword": "performance",
+                "title": "Производительность",
+                "definition": "Ключевой показатель качества PWA, включающий быструю загрузку, минимизацию ресурсов и оптимизацию рендеринга.",
+                "source": "https://web.dev/performance/",
+                "category": "Метрика",
+                "related_terms": ["lighthouse", "offline-first"]
+            },
+            {
+                "keyword": "responsive-design",
+                "title": "Адаптивный дизайн",
+                "definition": "Подход к веб-разработке, при котором интерфейс корректно отображается на различных устройствах и размерах экранов.",
+                "source": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design",
+                "category": "Дизайн",
+                "related_terms": ["pwa"]
+            },
+            {
+                "keyword": "https",
+                "title": "HTTPS",
+                "definition": "Защищённый протокол передачи данных, обязательное требование для работы Service Worker и большинства возможностей PWA.",
+                "source": "https://developer.mozilla.org/en-US/docs/Glossary/HTTPS",
                 "category": "Безопасность",
-                "related_terms": ["wallet", "cryptocurrency", "public-key"]
+                "related_terms": ["service-worker", "pwa"]
             },
             {
-                "keyword": "public-key",
-                "title": "Публичный ключ",
-                "definition": "Криптографический ключ, который может быть публично раскрыт и используется для получения криптовалюты. Выводится из приватного ключа, но обратное преобразование невозможно.",
-                "source": "https://ethereum.org/en/developers/docs/accounts/",
-                "category": "Безопасность",
-                "related_terms": ["private-key", "wallet", "address"]
-            },
-            {
-                "keyword": "address",
-                "title": "Адрес",
-                "definition": "Уникальный идентификатор в блокчейне, используемый для отправки и получения криптовалюты. Обычно представлен в виде строки символов.",
-                "source": "https://ethereum.org/en/developers/docs/accounts/",
-                "category": "Идентификатор",
-                "related_terms": ["public-key", "wallet", "blockchain"]
-            },
-            {
-                "keyword": "distributed-ledger",
-                "title": "Распределенный реестр",
-                "definition": "База данных, которая реплицируется и синхронизируется между участниками сети. Блокчейн является одним из типов распределенного реестра.",
-                "source": "https://en.wikipedia.org/wiki/Distributed_ledger",
-                "category": "Технология",
-                "related_terms": ["blockchain", "decentralization"]
-            },
-            {
-                "keyword": "decentralization",
-                "title": "Децентрализация",
-                "definition": "Распределение контроля и принятия решений от центрального органа к распределенной сети участников. Основной принцип Web3 и блокчейна.",
-                "source": "https://ethereum.org/en/web3/",
-                "category": "Концепция",
-                "related_terms": ["web3", "blockchain", "distributed-ledger"]
+                "keyword": "app-shell",
+                "title": "App Shell Model",
+                "definition": "Архитектурный подход, при котором базовая оболочка интерфейса кэшируется отдельно от динамического контента для обеспечения быстрой загрузки.",
+                "source": "https://web.dev/app-shell/",
+                "category": "Архитектура",
+                "related_terms": ["service-worker", "offline-first"]
             }
         ]
-        
+
         for term_data in default_terms:
             term = TermCreate(**term_data)
             self.create_term(term)
@@ -248,18 +208,16 @@ class Database:
         nodes = []
         edges = []
         category_colors = {
-            "Технология": "#4A90E2",
-            "Финансы": "#50C878",
-            "Криптовалюта": "#FFD700",
-            "Платформа": "#9B59B6",
-            "Приложение": "#E74C3C",
             "Концепция": "#3498DB",
-            "Токен": "#F39C12",
-            "Процесс": "#E67E22",
-            "Механизм": "#1ABC9C",
-            "Инструмент": "#34495E",
+            "Технология": "#4A90E2",
+            "Архитектура": "#9B59B6",
+            "API": "#F39C12",
+            "Функциональность": "#E74C3C",
+            "Дизайн": "#1ABC9C",
             "Безопасность": "#E91E63",
-            "Идентификатор": "#607D8B"
+            "Инструмент": "#34495E",
+            "Характеристика": "#50C878",
+            "Конфигурация": "#607D8B",
         }
         
         for term in self.terms.values():

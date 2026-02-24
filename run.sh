@@ -7,7 +7,7 @@ if [ -d "venv" ]; then
     source venv/bin/activate
 fi
 
-echo "🚀 Запуск Web3 Glossary API..."
+echo "🚀 Запуск PWA Glossary API..."
 echo "API будет доступен по адресу: http://localhost:8000"
 echo "Frontend: http://localhost:8000/static/index.html"
 echo "API документация: http://localhost:8000/docs"

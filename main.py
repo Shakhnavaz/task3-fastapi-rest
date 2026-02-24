@@ -9,8 +9,8 @@ from models import (
 from database import db
 
 app = FastAPI(
-    title="Web3 Glossary API",
-    description="API для управления глоссарием Web3 терминов с поддержкой семантического графа",
+    title="PWA Glossary API",
+    description="API для управления глоссарием терминов Progressive Web Apps (PWA) с поддержкой семантического графа",
     version="1.0.0"
 )
 
@@ -26,7 +26,7 @@ async def root():
     <html>
     <head>
         <meta http-equiv="refresh" content="0; url=/static/index.html">
-        <title>Web3 Glossary</title>
+        <title>PWA Glossary</title>
     </head>
     <body>
         <p>Redirecting to <a href="/static/index.html">frontend</a>...</p>

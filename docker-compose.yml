@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  web3-glossary:
+  pwa-glossary:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: web3-glossary
+    container_name: pwa-glossary
     ports:
       - "8000:8000"
     environment:
